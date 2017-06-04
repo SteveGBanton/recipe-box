@@ -1,0 +1,188 @@
+@import "globals";
+
+
+//-----------
+//Box Shadow Extensions
+//-----------
+
+.bs1 {
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.bs2 {
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.bs3 {
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.bs4 {
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.bs5 {
+box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+//-----------
+//Main CSS
+//-----------
+
+#react-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.app {
+  height: 100%;
+}
+
+#recipe-list {
+  overflow: auto;
+  padding: 30px;
+  background-color: #1976D2;
+  @extend .bs3;
+  z-index: 1;
+}
+
+#recipe-details {
+  overflow: auto;
+  padding: 50px;
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  z-index: 0
+}
+
+#textarea-directions {
+  width: 75%;
+}
+
+#ingredients-boxes {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 30px;
+}
+
+#temp-ingredients {
+  display: inline-block;
+
+}
+
+#ingredient-single, #add-ingredient{
+  font-size: 12px;
+  margin: 2px;
+  //border: 2px solid #2196F3;
+  padding: 5px 7px 8px 12px;
+  color: white;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  cursor: pointer;
+  background-color: #2196F3;
+}
+
+#add-ingredient {
+  &:hover {
+    opacity: 0.8
+  }
+
+}
+
+#textinput-title, #textinput-ingredients, #textarea-directions {
+  border-radius: 3px;
+  border: 1px solid #CFD8DC;
+  padding: 8px;
+  margin: 8px;
+  &:focus {
+    transition: all 0.03s ease-in-out;
+    outline: none;
+  }
+}
+
+label {
+  margin: 25px 8px 2px 16px;
+  font-size: 16px;
+}
+
+.submit-button {
+  border: 0px;
+  background-color: #2196F3;
+  color: white;
+  padding: 8px;
+  margin: 16px;
+  cursor: pointer;
+  &:active {
+    background-color: #1976D2
+
+  }
+}
+
+#delete-ingredient, #clear-ingredients {
+  font-size: 12px;
+  margin: 0px;
+  padding: 5px 10px 8px 8px;
+  color: white;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  cursor: pointer;
+  background-color: #2196F3;
+  &:hover {
+    opacity: 0.8
+  }
+}
+
+#clear-ingredients {
+
+  background-color: #FF5722;
+}
+
+#delete-button {
+
+  width: 50%;
+  text-align: center;
+  background-color: #FF5722;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 8px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+#edit-button {
+  width: 50%;
+  text-align: center;
+  background-color: #2196F3;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 8px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+#ingredients-details {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+#add-button, #recipe-listing {
+  height: 40px;
+  margin: 5px;
+  padding: 8px 8px 8px 16px;
+  background-color: #2196F3;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+  @extend .bs1;
+  &:hover {
+    opacity: 0.8;
+  }
+}
